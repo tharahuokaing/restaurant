@@ -5,9 +5,9 @@
 
 // ១. បញ្ជីទិន្នន័យមន្តអាគម (Imperial Menu Data)
 const imperialMenu = [
-    { id: 1, name: "អាម៉ុកត្រី", english_name: "Fish Amok", price: 2.50, category: "Food", stock: 0, image_url: "https://www.google.com/search?q=Fish+Amok+Cambodian+Food&tbm=isch" },
-    { id: 2, name: "សម្លកកូរ", english_name: "Samlor Korko", price: 2.50, category: "Food", stock: 0, image_url: "https://www.google.com/search?q=Samlor+Korko&tbm=isch" },
-    { id: 3, name: "ឡុកឡាក់សាច់គោ", english_name: "Beef Lok Lak", price: 2.50, category: "Food", stock: 0, image_url: "https://www.google.com/search?q=Beef+Lok+Lak&tbm=isch" },
+    { id: 1, name: "អាម៉ុកត្រី", english_name: "Fish Amok", price: 2.50, category: "Food", stock: 0, image_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Ho_mok_pla.JPG/960px-Ho_mok_pla.JPG" },
+    { id: 2, name: "សម្លកកូរ", english_name: "Samlor Korko", price: 2.50, category: "Food", stock: 0, image_url: "https://konkhmer2018.wordpress.com/2018/08/31/00003/" },
+    { id: 3, name: "ឡុកឡាក់សាច់គោ", english_name: "Beef Lok Lak", price: 2.50, category: "Food", stock: 0, image_url: "https://km.wikipedia.org/wiki/%E1%9E%AF%E1%9E%80%E1%9E%9F%E1%9E%B6%E1%9E%9A:2016_Phnom_Penh,_Kambod%C5%BCa%C5%84ski_Lok_Lak_(02).jpg" },
     { id: 4, name: "នំបញ្ចុកសម្លប្រហើរ", english_name: "Num Banh Chok", price: 2.50, category: "Food", stock: 0, image_url: "https://www.google.com/search?q=Num+Banh+Chok&tbm=isch" },
     { id: 5, name: "សម្លម្ជូរគ្រឿងសាច់គោ", english_name: "Beef Sour Soup", price: 2.50, category: "Food", stock: 0, image_url: "https://www.google.com/search?q=Beef+Sour+Soup+Khmer&tbm=isch" },
     { id: 6, name: "ក្តាមឆាម៉េចខ្ចី", english_name: "Fried Crab", price: 2.50, category: "Food", stock: 0, image_url: "https://www.google.com/search?q=Fried+Crab+with+Green+Pepper+Kampot&tbm=isch" },
