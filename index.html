@@ -15,11 +15,79 @@
             <input type="text" id="search-input" placeholder="ស្វែងរកម្ហូប ឬភេសជ្ជៈ (Search)..." onkeyup="searchProduct(this.value)">
         </div>
 
-        <div id="speakkhmer">
-            <button onclick="speakKhmer('សូមស្វាគមន៍មកកាន់ ភោជនីយដ្ឋាន ហួ កាំង')" class="btn-voice">
-                📢 សាកល្បងសំឡេង
-            </button>
-        </div>
+<div id="speakkhmer" style="text-align: center; padding: 20px;">
+    <button onclick="playMetaVoice()" class="meta-voice-btn">
+        <div class="pulse-ring"></div>
+        <span class="icon">🎙️</span>
+        <span class="text">សាកល្បងសំឡេង AI</span>
+    </button>
+</div>
+
+<style>
+    .meta-voice-btn {
+        position: relative;
+        background: rgba(0, 255, 255, 0.1);
+        border: 2px solid #00ffff;
+        color: #00ffff;
+        padding: 12px 24px;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 50px;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: all 0.3s ease;
+        box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+        overflow: visible;
+    }
+
+    .meta-voice-btn:hover {
+        background: rgba(0, 255, 255, 0.2);
+        box-shadow: 0 0 25px rgba(0, 255, 255, 0.6);
+        transform: translateY(-2px);
+    }
+
+    .meta-voice-btn .icon {
+        font-size: 20px;
+        filter: drop-shadow(0 0 5px #00ffff);
+    }
+
+    /* Synthetic Pulse Effect */
+    .pulse-ring {
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        border-radius: 50px;
+        border: 2px solid #00ffff;
+        animation: meta-pulse 2s infinite;
+        opacity: 0;
+    }
+
+    @keyframes meta-pulse {
+        0% { transform: scale(1); opacity: 0.5; }
+        100% { transform: scale(1.3); opacity: 0; }
+    }
+</style>
+
+<script>
+    function playMetaVoice() {
+        const text = "សូមស្វាគមន៍មកកាន់ ភោជនីយដ្ឋាន ហួ កាំង";
+        
+        // Use SpeechSynthesisUtterance for the synthetic voice
+        const msg = new SpeechSynthesisUtterance();
+        msg.text = text;
+        msg.lang = 'km-KH'; // Set to Khmer
+        
+        // Meta-synthetic adjustment: lower pitch and slower rate sounds more "AI"
+        msg.rate = 0.9; 
+        msg.pitch = 1.1; 
+
+        window.speechSynthesis.speak(msg);
+    }
+</script>
+        
     </div>
 
     <div id="category-bar">
@@ -102,7 +170,78 @@
     </div>
 
     <button onclick="openAdminPanel()" class="btn-admin-secret">Admin</button>
+    
+            <div class="modal-content" style="width: 350px; max-height: 90vh; overflow-y: auto; padding: 15px; border-radius: 8px;">
+    <h3 style="margin-top: 0; text-align: center;">ទីតាំងហាង / Store Location</h3>
+    
+    <div class="modal-content" style="
+    width: 320px; 
+    max-height: 80vh; 
+    overflow-y: auto; 
+    background: rgba(0, 20, 40, 0.85); /* Dark blue transparent base */
+    border: 1px solid rgba(0, 255, 255, 0.5); /* Cyan border */
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.4), inset 0 0 10px rgba(0, 255, 255, 0.2);
+    backdrop-filter: blur(8px); /* Frosted glass effect */
+    padding: 20px;
+    border-radius: 12px;
+    color: #00ffff; /* Cyber cyan text */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+">
+    <div style="text-align: center; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 2px; font-weight: bold; font-size: 14px;">
+       ស្វាគមន៍មកកាន់ ហួ កាំង
+    </div>
 
+    <div style="
+        position: relative;
+        width: 100%;
+        height: 300px;
+        border: 1px solid rgba(0, 255, 255, 0.3);
+        overflow: hidden;
+        filter: hue-rotate(180deg) brightness(1.2) contrast(1.1); /* Holographic tint */
+    ">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3905.941914274955!2d104.97778337583713!3d11.826224888385994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3109a9b6e5134fd7%3A0xb848e936dfb397b0!2z4Z6V4Z-Y4Z-BLeGet-GetuGetuGetA!5e0!3m2!1sen!2skh!4v1739504000000!5m2!1sen!2skh" 
+            width="100%" 
+            height="100%" 
+            style="border:0; opacity: 0.8;" 
+            allowfullscreen="" 
+            loading="lazy">
+        </iframe>
+        
+        <div style="
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 2px;
+            background: rgba(0, 255, 255, 0.5);
+            box-shadow: 0 0 10px #00ffff;
+            animation: scan 3s linear infinite;
+        "></div>
+    </div>
+
+    <button onclick="document.getElementById('admin-modal').style.display='none'" 
+            class="btn-cancel" 
+            style="
+                width: 100%; 
+                margin-top: 20px; 
+                background: transparent; 
+                border: 1px solid #00ffff; 
+                color: #00ffff; 
+                padding: 10px; 
+                cursor: pointer;
+                text-transform: uppercase;
+                transition: 0.3s;
+            "
+            onmouseover="this.style.background='rgba(0, 255, 255, 0.2)'"
+            onmouseout="this.style.background='transparent'">
+        បិទផ្ទាំង Admin
+    </button>
+
+    <style>
+        @keyframes scan {
+            0% { top: 0%; }
+            100% { top: 100%; }
+        }
+    </style>
+</div>
     <script src="app.js"></script>
 </body>
 </html>               
