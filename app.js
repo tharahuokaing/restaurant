@@ -19,7 +19,7 @@ const imperialMenu = [
     { id: 12, name: "Red Label 1L", english_name: "Whisky", price: 15.00, category: "Alcohol", stock: 0, image_url: "red1liter" },
     { id: 13, name: "Black Label 1L", english_name: "Whisky", price: 30.00, category: "Alcohol", stock: 0, image_url: "https://www.google.com/search?q=Johnnie+Walker+Black+Label+1L&tbm=isch" },
     { id: 14, name: "Gold Label 1L", english_name: "Whisky", price: 50.00, category: "Alcohol", stock: 0, image_url: "https://www.google.com/search?q=Johnnie+Walker+Gold+Label+Reserve&tbm=isch" },
-    { id: 15, name: "Platinium 75ml", english_name: "Whisky", price: 18.00, category: "Alcohol", stock: 0, image_url: "https://www.google.com/search?q=Johnnie+Walker+Platinum+Label&tbm=isch" },
+    { id: 15, name: "Platinium 75ml", english_name: "Whisky", price: 85.00, category: "Alcohol", stock: 0, image_url: "https://www.google.com/search?q=Johnnie+Walker+Platinum+Label&tbm=isch" },
     { id: 16, name: "Blue label 75ml", english_name: "Whisky", price: 180.00, category: "Alcohol", stock: 0, image_url: "https://www.google.com/search?q=Johnnie+Walker+Blue+Label&tbm=isch" },
     { id: 17, name: "Penfold Bin 2", english_name: "Wine", price: 22.00, category: "Alcohol", stock: 0, image_url: "https://www.google.com/search?q=Penfolds+Bin+2&tbm=isch" },
     { id: 18, name: "Penfold Bin 9", english_name: "Wine", price: 30.00, category: "Alcohol", stock: 0, image_url: "https://www.google.com/search?q=Penfolds+Bin+9&tbm=isch" },
