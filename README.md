@@ -45,7 +45,7 @@
 
 1. **Clone code ចេញពី GitHub:**
 ```bash
-git clone https://github.com/tharahuokaing/Restaurant.git
+git clone https://github.com/tharahuokaing/restaurant.git
 
 ```
 
