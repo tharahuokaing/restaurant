@@ -172,7 +172,7 @@
     <button onclick="openAdminPanel()" class="btn-admin-secret">Admin</button>
     
             <div class="modal-content" style="width: 350px; max-height: 90vh; overflow-y: auto; padding: 15px; border-radius: 8px;">
-    <h3 style="margin-top: 0; text-align: center;">ទីតាំងភោជនីយដ្ឋាន / restuarant Location</h3>
+    <h3 style="margin-top: 0; text-align: center;">ទីតាំងភោជនីយដ្ឋាន / Restuarant Location</h3>
     
     <div class="hologram-modal" style="
     margin: auto;
@@ -189,50 +189,47 @@
         📍 ស្វាគមន៍មកកាន់ភោជនីយដ្ឋាន ហួ កាំង
     </div>
 
-    <div class="map-wrapper" style="
-        position: relative;
-        width: 100%;
-        border: 1px solid rgba(0, 255, 255, 0.3);
-        overflow: hidden;
-        filter: hue-rotate(180deg) brightness(1.1) contrast(1.2);
-    ">
-        <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3907.5658097746376!2d104.9358102!3d11.6543059!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x310927b6e5134fd5%3A0xb848e936df2097b0!2z4Z6V4Z-G4Z6fIOCZhuCZn-CZhQ!5e0!3m2!1skm!2skh!4v1715678901234!5m2!1skm!2skh" 
-            width="100%" 
-            height="100%" 
-            style="border:0; opacity: 0.7;" 
-            allowfullscreen="" 
-            loading="lazy">
-        </iframe>
-        
-        <div class="scan-line"></div>
-    </div>
+        <div class="map-wrapper" style="
+            position: relative;
+            width: 100%;
+            height: 350px;
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            overflow: hidden;
+            filter: hue-rotate(180deg) brightness(1.1) contrast(1.2);
+        ">
+            <!-- World View Map -->
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!2m3!1d0!2d0!3d0!3m2!1i1024!2i768!4f0!5e0!3m2!1sen!2s!4v1715678901234!5m2!1sen!2s" 
+                width="100%" 
+                height="100%" 
+                style="border:0; opacity: 0.7;" 
+                allowfullscreen="" 
+                loading="lazy">
+            </iframe>
+            
+            <div class="scan-line"></div>
+        </div>
 
-    <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 20px;">
-        
-        <a href="https://www.google.com/maps/dir/?api=1&destination=11.8262314,104.9803321" 
-           target="_blank" 
-           style="
-            text-decoration: none;
-            background: #00ffff;
-            color: #001428;
-            padding: 12px;
-            border-radius: 5px;
-            text-align: center;
-            font-weight: bold;
-            text-transform: uppercase;
-            box-shadow: 0 0 15px #00ffff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            transition: 0.3s;
-           "
-           onmouseover="this.style.boxShadow='0 0 25px #00ffff'; this.style.transform='scale(1.02)'"
-           onmouseout="this.style.boxShadow='0 0 15px #00ffff'; this.style.transform='scale(1)'">
-            🚀 មើលផ្លូវទៅកាន់ភោជនីយដ្ឋាន (Direction)
-        </a>
-        
+        <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 20px;">
+            <a href="https://www.google.com/maps/dir/?api=1&destination=11.8262314,104.9803321" target="_blank" style="
+                text-decoration: none;
+                background: #00ffff;
+                color: #001428;
+                padding: 12px;
+                border-radius: 5px;
+                text-align: center;
+                font-weight: bold;
+                text-transform: uppercase;
+                box-shadow: 0 0 15px #00ffff;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+                transition: 0.3s;
+            " onmouseover="this.style.boxShadow='0 0 25px #00ffff'; this.style.transform='scale(1.02)'" onmouseout="this.style.boxShadow='0 0 15px #00ffff'; this.style.transform='scale(1)'">
+                🚀 មើលផ្លូវទៅកាន់ភោជនីយដ្ឋាន (Direction)
+            </a>
+        </div>
     </div>
 </div>
 
