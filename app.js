@@ -46,8 +46,7 @@ const imperialMenu = [
     { id: 38, name: "Nottage Hill Chardonnay 2021", english_name: "Australian White Wine (Chardonnay)", price: 25.00, category: "Wine", stock: 20, <img src="https://www.thewhiskyexchange.com/images/products/large/33580.jpg" width="800" height="600" />
     { id: 39, name: "Nottage Hill Chardonnay 2020", english_name: "Australian White Wine (Chardonnay)", price: 24.00, category: "Wine", stock: 18, <img src="https://www.thewhiskyexchange.com/images/products/large/33581.jpg" width="800" height="600" />
     { id: 40, name: "Bollinger Special Cuvée", english_name: "Non-Vintage Brut Champagne", price: 75.00, category: "Wine", stock: 10, <img src="https://www.thewhiskyexchange.com/images/products/large/33596.jpg" width="800" height="600" />
-    { id: 41, name: "Gordon’s London Dry", english_name: "London Dry Gin (England)", price: 25.00, category: "Alcohol", stock: 30, <img src="https://www.thewhiskyexchange.com/images/products/large/33683.jpg" }
-    
+    { id: 41, name: "Gordon’s London Dry", english_name: "London Dry Gin (England)", price: 25.00, category: "Alcohol", stock: 30, <img src="https://www.thewhiskyexchange.com/images/products/large/33683.jpg" />
 ];
 
 let cart = [];
