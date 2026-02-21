@@ -62,4 +62,4 @@ cd restaurant
 
 ---
 
-© 2027 រក្សាសិទ្ធិដោយ Huokaing Thara។
+© 2029 រក្សាសិទ្ធិដោយ Huokaing Thara។
