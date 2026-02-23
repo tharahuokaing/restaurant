@@ -253,188 +253,71 @@
 </div>
 
 <style>
-/* Scan Animation */
-.scan-line {
-    position: absolute;
-    top: 0; 
-    left: 0;
-    width: 100%; 
-    height: 3px;
-    background: rgba(0, 255, 255, 0.6);
-    box-shadow: 0 0 15px #00ffff;
-    animation: scan 4s linear infinite;
-    z-index: 3;
-}
-
-@keyframes scan {
-    0% { top: 0%; }
-    100% { top: 100%; }
-}
-
-/* Ensure the layout is responsive across devices */
-@media (max-width: 768px) {
-    .map-wrapper { height: 180px; }
-    .holo-title { font-size: 1em; }
-}
-</style>
-
-<style>
-/* Mobile (Android & iOS small screens) */
-@media (max-width: 480px) {
-    .hologram-modal {
-        width: 95%;
-        border-radius: 14px;
-    }
-    .map-wrapper {
-        height: 220px;
-    }
-    .holo-title {
-        font-size: 1.4em;
-    }
-}
-
-/* Larger Mobile / Small Tablets */
-@media (min-width: 481px) and (max-width: 767px) {
-    .hologram-modal {
-        width: 90%;
-    }
-    .map-wrapper {
-        height: 250px;
-    }
-    .holo-title {
-        font-size: 1.6em;
-    }
-}
-
-/* Tablets (portrait & landscape) */
-@media (min-width: 768px) and (max-width: 1024px) {
-    .hologram-modal {
-        width: 70%;
-    }
-    .map-wrapper {
-        height: 300px;
-    }
-    .holo-title {
-        font-size: 1.8em;
-    }
-}
-
-/* Desktop & Large Screens */
-@media (min-width: 1025px) {
-    .hologram-modal {
-        width: 450px;
-    }
-    .map-wrapper {
-        height: 350px;
-    }
-    .holo-title {
-        font-size: 2em;
-    }
-}
-
-/* Universal Scan Animation */
-.scan-line {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 2px;
-    background: rgba(0, 255, 255, 0.8);
-    box-shadow: 0 0 15px #00ffff;
-    animation: scan 4s linear infinite;
-}
-
-@keyframes scan {
-    0% { top: 0%; }
-    100% { top: 100%; }
-}
-</style>
-</div>
-
-<div class="menu-bottom-container" style="width: 100%; margin-top: auto; padding: 10px; box-sizing: border-box;">
-    <div class="hologram-modal" id="flight24-container" style="
-        position: relative;
+    /* ---------------------------------------------------------
+       ១. ចលនាស្កេន (Universal Scan Animation)
+    --------------------------------------------------------- */
+    .scan-line {
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
-        background: rgba(0, 20, 40, 0.9); 
-        border: 1px solid var(--hologram-cyan); 
-        box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
-        backdrop-filter: blur(10px);
-        padding: 15px;
-        border-radius: 15px;
-        color: var(--hologram-cyan);
-        font-family: 'Kantumruy', 'Courier New', monospace;
-        overflow: hidden;
-    ">
-        <div id="flight24-title" style="text-align: center; margin-bottom: 12px; font-weight: bold; font-size: 0.85em; text-shadow: 0 0 10px #00ffff; z-index: 2; position: relative; height: 1.2em;">
-            </div>
+        height: 3px;
+        background: rgba(0, 255, 255, 0.7);
+        box-shadow: 0 0 15px #00ffff, 0 0 5px rgba(255, 255, 255, 0.5);
+        animation: scan-process 4s linear infinite;
+        z-index: 10;
+        pointer-events: none; /* Allows clicking through the laser line */
+    }
 
-        <div class="map-wrapper" style="
-            position: relative;
-            width: 100%;
-            height: 280px; 
-            border-radius: 10px;
-            overflow: hidden;
-            border: 1px solid rgba(0, 255, 255, 0.2);
-            background: #000c1a;
-        ">
-            <iframe 
-                id="flight24-iframe"
-                src="https://www.flightradar24.com/simple_index.php?lat=0.00&lon=-169.65&z=2" 
-                width="100%" 
-                height="100%" 
-                style="border:0; filter: hue-rotate(160deg) brightness(0.8) contrast(1.2) saturate(0.7); background: transparent;" 
-                allowfullscreen>
-            </iframe>
-            
-            <div class="scan-line" style="
-                position: absolute;
-                top: 0; left: 0;
-                width: 100%; height: 3px;
-                background: rgba(0, 255, 255, 0.6);
-                box-shadow: 0 0 15px #00ffff;
-                animation: scan 5s linear infinite;
-                z-index: 3;
-                pointer-events: none;
-            "></div>
-        </div>
+    @keyframes scan-process {
+        0% { top: 0%; opacity: 0; }
+        10% { opacity: 1; }
+        90% { opacity: 1; }
+        100% { top: 100%; opacity: 0; }
+    }
 
-        <div style="margin-top: 15px; position: relative; z-index: 2;">
-            <button class="btn-pay aba" style="width: 100%; padding: 10px; font-size: 0.8em; letter-spacing: 1px;" onclick="window.open('https://www.flightradar24.com', '_blank')">
-                INITIALIZE GLOBAL TRACKING
-            </button>
-        </div>
-    </div>
-</div>
+    /* ---------------------------------------------------------
+       ២. ការកំណត់ទំហំឆ្លាតវៃ (Responsive Breakpoints)
+    --------------------------------------------------------- */
 
-<script>
-/**
- * Flight24 Live Real-Time Logic
- */
-document.addEventListener("DOMContentLoaded", function() {
-    const titleElement = document.getElementById('flight24-title');
-    const fullText = "🛰️ FLIGHT24 LIVE REAL TIME";
-    let index = 0;
-
-    // Typewriter effect for the title
-    function typeWriter() {
-        if (index < fullText.length) {
-            titleElement.innerHTML += fullText.charAt(index);
-            index++;
-            setTimeout(typeWriter, 100);
-        } else {
-            // After typing, start the signal pulse
-            startSignalPulse();
+    /* ទូរស័ព្ទដៃ (Mobile Portrait) */
+    @media (max-width: 480px) {
+        .hologram-modal { 
+            width: 95% !important; 
+            margin: 10px auto; 
+            border-radius: 14px; 
         }
+        .map-wrapper { height: 200px !important; }
+        .holo-title { font-size: 1.2em !important; }
     }
 
-    function startSignalPulse() {
-        setInterval(() => {
-            const signal = Math.floor(Math.random() * (100 - 92) + 92);
-            titleElement.innerHTML = `🛰️ FLIGHT24 LIVE REAL TIME [SIG: ${signal}%]`;
-        }, 3000);
+    /* ថេប្លេត ឬទូរស័ព្ទអេក្រង់ធំ (Tablets / Landscape Mobile) */
+    @media (min-width: 481px) and (max-width: 1024px) {
+        .hologram-modal { width: 80% !important; margin: 15px auto; }
+        .map-wrapper { height: 280px !important; }
+        .holo-title { font-size: 1.6em !important; }
     }
 
-    typeWriter();
-});
-</script>
-    <script src="app.js"></script>
+    /* អេក្រង់កុំព្យូទ័រ (Desktop & Large Screens) */
+    @media (min-width: 1025px) {
+        .hologram-modal { 
+            width: 450px !important; 
+            margin-left: 0; /* Aligns with POS sidebar */
+        }
+        .map-wrapper { height: 320px !important; }
+        .holo-title { font-size: 1.8em !important; }
+    }
+
+    /* ស្ទីលបន្ថែមសម្រាប់ Terminal (Bonus Visuals) */
+    .hologram-modal {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .hologram-modal:hover {
+        transform: scale(1.01);
+        box-shadow: 0 0 30px rgba(0, 255, 255, 0.4);
+    }
+</style>
+
+<script src="app.js"></script>
 </body>
 </html> 
