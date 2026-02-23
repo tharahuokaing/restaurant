@@ -147,27 +147,23 @@ function closePayment() {
     document.getElementById('qr-display').innerHTML = "";
 }
 
-function pay(method) {
-    const totalUSD = document.getElementById('final-total').innerText.replace('$', '');
-    const modalTitle = document.getElementById('modal-title');
-    const qrDisplay = document.getElementById('qr-display');
+function pay(method, element) {
+    // ១. លុបពន្លឺ LED ចេញពីប៊ូតុងទាំងអស់ជាមុន (Clear LED from all buttons)
+    const allButtons = document.querySelectorAll('.btn-pay');
+    allButtons.forEach(btn => {
+        btn.classList.remove('led-loading');
+    });
 
-    if (method === 'ABA KHQR') {
-        modalTitle.innerText = "ABA Bank / KHQR Payment";
-        const qrUrl = `https://chart.googleapis.com/chart?chs=250x250&cht=qr&chl=https://pay.ababank.com/002363507/${totalUSD}`;
-        qrDisplay.innerHTML = `
-            <div style="background: white; padding: 20px; border-radius: 15px; display: inline-block; margin-top: 15px;">
-                <img src="${qrUrl}" style="width:200px;">
-                <p style="color: #003e52; font-weight: bold; margin-top: 10px;">HUOKAING THARA</p>
-                <p style="color: #d35400; font-size: 1.2em; font-weight: bold;">$${totalUSD}</p>
-            </div>`;
-    } else {
-        modalTitle.innerText = `ទូទាត់តាម ${method}`;
-        qrDisplay.innerHTML = `<div class="loader" style="margin: 40px auto;"></div><p style="color:white;">សូមឆូតកាត ឬបញ្ចូលកាត...</p>`;
-        setTimeout(() => {
-            qrDisplay.innerHTML = `<div style="color: #27ae60; font-size: 60px;">✔</div><p style="color: white;">ការអនុញ្ញាតជោគជ័យ!</p>`;
-        }, 2000);
+    // ២. បន្ថែមពន្លឺ LED ទៅលើប៊ូតុងដែលបានចុច (Apply LED to clicked button)
+    if (element) {
+        element.classList.add('led-loading');
     }
+
+    // ៣. បង្ហាញព័ត៌មាន QR តាមបច្ចេកទេសរបស់អ្នក (Your QR logic here)
+    console.log("Method selected: " + method);
+    
+    // ឧទាហរណ៍៖ ប្តូរចំណងជើង Modal (Optional title update)
+    document.getElementById('modal-title').innerText = "ទូទាត់តាម " + method;
 }
 
 // ៧. បញ្ចប់ប្រតិបត្តិការ (Complete & Save Receipt)
