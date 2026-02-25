@@ -1,3 +1,4 @@
+## ⚠️ Educational Use Only
 # 🍴 ប្រព័ន្ធគ្រប់គ្រងភោជនីយដ្ឋាន ហួ កាំង (សាខាមុខកំពូល)
 
 **Developed by:** [Huokaing Thara](https://www.google.com/search?q=https://github.com/tharahuokaing)
