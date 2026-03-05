@@ -39,13 +39,13 @@ db.serialize(() => {
             console.log("📦 កំពុងរៀបចំបញ្ជីមុខម្ហូបដំបូងចូលក្នុងឃ្លាំង...");
 
             const initialProducts = [
-                ['អាម៉ុកត្រី', 'Fish Amok', 2.50, 'Food', 50],
-                ['សម្លកកូរ', 'Samlor Korko', 2.50, 'Food', 30],
-                ['ឡុកឡាក់សាច់គោ', 'Beef Lok Lak', 2.50, 'Food', 25],
-                ['Red Label 1L', 'Whisky', 15.00, 'Alcohol', 12],
-                ['Black Label 1L', 'Whisky', 30.00, 'Alcohol', 10],
-                ['Blue label 75ml', 'Whisky', 180.00, 'Alcohol', 5],
-                ['Gold XR 21Y', 'Whisky', 105.00, 'Alcohol', 8]
+                ['អាម៉ុកត្រី', 'Fish Amok', 2.50, 'Food', 0],
+                ['សម្លកកូរ', 'Samlor Korko', 2.50, 'Food', 0],
+                ['ឡុកឡាក់សាច់គោ', 'Beef Lok Lak', 2.50, 'Food', 0],
+                ['Red Label 1L', 'Whisky', 15.00, 'Alcohol', 0],
+                ['Black Label 1L', 'Whisky', 30.00, 'Alcohol', 0],
+                ['Blue label 75ml', 'Whisky', 180.00, 'Alcohol', 0],
+                ['Gold XR 21Y', 'Whisky', 105.00, 'Alcohol', 0]
             ];
 
             const stmt = db.prepare(`INSERT INTO products (name, english_name, price, category, stock)
